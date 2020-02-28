@@ -1,18 +1,21 @@
 public class Date {
 
-    private int theYear;
-    private int theMonth;
-    private int theDay;
+    private int theYear = 2000;
+    private int theMonth = 1;
+    private int theDay = 1;
 
-    private String dateSet (int year, int month, int day) {
-        this.theYear = year;
-        this.theMonth = month;
-        this.theDay = day;
-
-        return null;
+    public String dateSet (int year, int month, int day) {
+        if (year >= 2000 && year <= 2100) {
+            if(month >=1 && month <= 12) {
+               if (day >=1 && day <= 31) {
+                   return day + "/" + month + "/" + year;
+               }
+            }
+        }
+        return "Invalid data, date unchanged";
     }
 
-    private String showDate() {
-        return null;
+    public String showDate() {
+        return theDay + "/" + theMonth + "/" + theYear;
     }
 }
